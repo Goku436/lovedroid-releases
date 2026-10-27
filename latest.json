@@ -1,7 +1,7 @@
 {
-  "version": "2.0",
-  "code": 8,
-  "notes": "Lovedroid 2.0\n- Days together: tap the cog to choose days, weeks, months, years or a mix\n- Spanish: Settings > Language\n- Light / dark / system theme on the phone\n- Widget backgrounds: gradients or your own colour\n- Custom moods with emoji, name and description\n- Jar history: see your filled jars\n- Leaving tells your partner\n- Fixed: things not syncing after a partner updated from an old version",
-  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.0/Lovedroid-2.0.apk",
-  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.0/Lovedroid-Setup-2.0.0.exe"
+  "version": "2.1",
+  "code": 9,
+  "notes": "Lovedroid 2.1: voice notes (hold the mic in the note editor, up to 30 s), waveform and 1.5x playback, play from the widget, expired voice notes are asked for again",
+  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.1/Lovedroid-2.1.apk",
+  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.1/Lovedroid-Setup-2.1.0.exe"
 }
