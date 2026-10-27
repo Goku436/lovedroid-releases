@@ -1,7 +1,7 @@
 {
-  "version": "1.3.1",
-  "code": 5,
-  "notes": "Fixes home-screen widgets sometimes showing another widget's content (like the love jar turning into a note) after a note was sent or arrived. Nothing new on PC.",
-  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v1.3.1/Lovedroid-1.3.1.apk",
-  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v1.3.1/Lovedroid-Setup-1.3.1.exe"
+  "version": "1.4",
+  "code": 6,
+  "notes": "Make your own touches: any emoji, a name and a vibration (tap Make your own; long-press to change one).\nPlan your next date: you both see the countdown on the home screen and the new Next date widget.",
+  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v1.4/Lovedroid-1.4.apk",
+  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v1.4/Lovedroid-Setup-1.4.0.exe"
 }
