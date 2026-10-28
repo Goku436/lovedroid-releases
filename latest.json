@@ -1,7 +1,7 @@
 {
-  "version": "2.3",
-  "code": 11,
+  "version": "3.0",
+  "code": 12,
   "notes": "Lovedroid 2.3: Lovedroid Plus (sealed notes, memories, more dates, themes, pens and stickers), voice notes no longer pause, older voice notes now load, tap a love jar count to see its name",
-  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.3/Lovedroid-2.3.apk",
-  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.3/Lovedroid-Setup-2.3.0.exe"
+  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v3.0/Lovedroid-3.0.apk",
+  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v3.0/Lovedroid-Setup-3.0.0.exe"
 }
