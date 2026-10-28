@@ -1,7 +1,7 @@
 {
-  "version": "2.1",
-  "code": 9,
-  "notes": "Lovedroid 2.1: voice notes (hold the mic in the note editor, up to 30 s), waveform and 1.5x playback, play from the widget, expired voice notes are asked for again",
-  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.1/Lovedroid-2.1.apk",
-  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.1/Lovedroid-Setup-2.1.0.exe"
+  "version": "2.3",
+  "code": 11,
+  "notes": "Lovedroid 2.3: Lovedroid Plus (sealed notes, memories, more dates, themes, pens and stickers), voice notes no longer pause, older voice notes now load, tap a love jar count to see its name",
+  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.3/Lovedroid-2.3.apk",
+  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v2.3/Lovedroid-Setup-2.3.0.exe"
 }
