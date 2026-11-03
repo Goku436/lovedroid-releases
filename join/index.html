@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Join me on Lovedroid</title>
+<meta property="og:title" content="Join me on Lovedroid 💞">
+<meta property="og:description" content="The private space for two. Tap to connect.">
+<!--
+  The invite page (Invite.WEB_JOIN). The code is after the #, which the browser never sends to
+  the server, and this page loads nothing from anywhere else.
+-->
+<style>
+  :root { --pink: #ff5c8a; --ink: #1f1b2e; --soft: #6b6478; --card: #ffffff; --bg: #fff5f8; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #f4eef7; --soft: #b8aec4; --card: #231c2e; --bg: #15111c; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 460px; margin: 0 auto; padding: 32px 16px 48px; }
+  .hero { text-align: center; padding: 28px 20px; border-radius: 28px; color: #fff; background: linear-gradient(135deg, #ff5c8a, #ff9a6b); }
+  .hero .big { font-size: 56px; line-height: 1; }
+  h1 { font-size: 24px; margin: 12px 0 4px; }
+  .hero p { margin: 0; opacity: .92; }
+  .card { background: var(--card); border-radius: 22px; padding: 18px; margin-top: 16px; }
+  .btn { display: block; width: 100%; text-align: center; padding: 15px; border-radius: 16px; border: 0; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+  .main { background: var(--pink); color: #fff; }
+  .plain { background: transparent; color: var(--pink); border: 2px solid var(--pink); margin-top: 10px; }
+  ol { margin: 8px 0 0; padding-left: 22px; }
+  li { margin: 6px 0; }
+  .code { font: 700 17px/1.4 ui-monospace, Consolas, monospace; letter-spacing: .5px; background: var(--bg); border-radius: 12px; padding: 10px; text-align: center; word-break: break-all; margin: 8px 0; }
+  .soft { color: var(--soft); font-size: 14px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+    <div class="big">💞</div>
+    <h1 id="title">You're invited to Lovedroid</h1>
+    <p id="pitch">The private space for two: sealed notes, a question a day, and each other on your home screens.</p>
+  </div>
+
+  <div id="bad" class="card hidden"><p id="badText">This invite link is missing its code. Ask for the link again.</p></div>
+
+  <div id="ok">
+    <div class="card" id="androidCard">
+      <a class="btn main" id="open" href="#">Open in Lovedroid</a>
+      <a class="btn plain" id="getApk" href="https://github.com/Goku436/lovedroid-releases/releases/latest">Get Lovedroid for Android</a>
+      <p class="soft" id="apkNote">Android asks to allow installing from your browser the first time: that's expected.</p>
+    </div>
+    <div class="card hidden" id="iosCard"><p id="iosText">Lovedroid isn't on iPhone yet. It's coming: until then it works on Android phones and Windows PCs.</p></div>
+    <div class="card">
+      <strong id="stepsTitle">Already installed, or on a PC?</strong>
+      <ol>
+        <li id="step1">Open Lovedroid, enter your name and tap “I have a code”.</li>
+        <li id="step2">Paste the message you got, or type this code:</li>
+      </ol>
+      <div class="code" id="code"></div>
+      <button class="btn plain" id="copy">Copy the code</button>
+      <a class="btn plain" id="getExe" href="https://github.com/Goku436/lovedroid-releases/releases/latest">Get Lovedroid for Windows</a>
+    </div>
+    <p class="soft" id="private">The code is the key to your notes: only you two have it. It stays in this link and is never sent to this website.</p>
+  </div>
+</main>
+<script>
+(function () {
+  var es = (navigator.language || "").toLowerCase().indexOf("es") === 0;
+  var T = es ? {
+    title: "Te invitaron a Lovedroid", titleFrom: "{0} te invita a Lovedroid",
+    pitch: "El espacio privado para dos: notas selladas, una pregunta al día y el uno al otro en la pantalla de inicio.",
+    bad: "A este enlace le falta el código. Pide el enlace otra vez.",
+    open: "Abrir en Lovedroid", apk: "Descargar Lovedroid para Android",
+    apkNote: "Android pide permiso para instalar desde el navegador la primera vez: es normal.",
+    ios: "Lovedroid aún no está en iPhone. Llegará: por ahora funciona en teléfonos Android y PC con Windows.",
+    stepsTitle: "¿Ya lo tienes, o estás en un PC?",
+    step1: "Abre Lovedroid, escribe tu nombre y toca «Tengo un código».",
+    step2: "Pega el mensaje que te llegó, o escribe este código:",
+    copy: "Copiar el código", copied: "Copiado ✓", exe: "Descargar Lovedroid para Windows",
+    private: "El código es la llave de sus notas: solo lo tienen ustedes dos. Va en este enlace y nunca se envía a esta web."
+  } : {
+    title: "You're invited to Lovedroid", titleFrom: "{0} invited you to Lovedroid",
+    copied: "Copied ✓"
+  };
+  function set(id, text) { if (text) document.getElementById(id).textContent = text; }
+  if (es) {
+    document.documentElement.lang = "es";
+    ["pitch", "open", "apkNote", "stepsTitle", "step1", "step2", "copy", "private"].forEach(function (k) { set(k, T[k]); });
+    set("badText", T.bad); set("getApk", T.apk); set("iosText", T.ios); set("getExe", T.exe);
+  }
+
+  var params = {};
+  location.hash.replace(/^#/, "").split("&").forEach(function (kv) {
+    var i = kv.indexOf("=");
+    if (i > 0) params[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1).replace(/\+/g, " "));
+  });
+  var code = (params.c || "").replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+  if (code.length !== 32) {
+    document.getElementById("ok").classList.add("hidden");
+    document.getElementById("bad").classList.remove("hidden");
+    return;
+  }
+  var pretty = code.match(/.{4}/g).join("-");
+  var name = (params.n || "").slice(0, 24);
+  document.getElementById("title").textContent = name ? T.titleFrom.replace("{0}", name) : T.title;
+  document.title = document.getElementById("title").textContent;
+  document.getElementById("code").textContent = pretty;
+
+  var ua = navigator.userAgent;
+  var android = /Android/i.test(ua), ios = /iPhone|iPad|iPod/i.test(ua);
+  var link = "lovedroid://pair?c=" + code + (params.s ? "&s=" + encodeURIComponent(params.s) : "");
+  function setOpen() {
+    // On Android: opens the app when it's there, otherwise the download.
+    document.getElementById("open").href = !android ? link : "intent://pair?c=" + code + (params.s ? "&s=" + encodeURIComponent(params.s) : "") +
+      "#Intent;scheme=lovedroid;package=com.lovedroid.app;S.browser_fallback_url=" + encodeURIComponent(document.getElementById("getApk").href) + ";end";
+  }
+  setOpen();
+  if (ios) {
+    document.getElementById("androidCard").classList.add("hidden");
+    document.getElementById("iosCard").classList.remove("hidden");
+  }
+
+  // Straight to the newest builds, when the releases list says where they are.
+  fetch("../latest.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+    if (!j) return;
+    if (j.apk) document.getElementById("getApk").href = j.apk;
+    if (j.exe) document.getElementById("getExe").href = j.exe;
+    setOpen();
+  }).catch(function () {});
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var b = this;
+    function done() { b.textContent = T.copied; }
+    if (navigator.clipboard) navigator.clipboard.writeText(pretty).then(done, function () {});
+  });
+})();
+</script>
+</body>
+</html>
