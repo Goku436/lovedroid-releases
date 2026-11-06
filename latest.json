@@ -1,7 +1,7 @@
 {
-  "version": "3.2",
-  "code": 14,
-  "notes": "added quiz and invites",
-  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v3.2/Lovedroid-3.2.apk",
-  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v3.2/Lovedroid-Setup-3.2.0.exe"
+  "version": "3.2.2",
+  "code": 16,
+  "notes": "Report a bug from Settings, tap a note to zoom, smoother PC widget dragging",
+  "apk": "https://github.com/Goku436/lovedroid-releases/releases/download/v3.2.2/Lovedroid-3.2.2.apk",
+  "exe": "https://github.com/Goku436/lovedroid-releases/releases/download/v3.2.2/Lovedroid-Setup-3.2.2.exe"
 }
